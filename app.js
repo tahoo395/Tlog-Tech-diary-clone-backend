@@ -3,8 +3,11 @@
 let express = require('express');
 let mongoose = require('mongoose');
 let cors = require('cors');
-let cookieParser = require('cookie-parser');
 let dotenv = require('dotenv');
+let cookieSession = require('cookie-session');
+let passport = require('passport')
+require('./strategies/github');
+require('./strategies/google');
 
 // global app object
 
@@ -12,22 +15,33 @@ let app = express();
 
 // middleware setup
 
-app.use(cors())
+app.use(cors({
+    credentials: true,
+}))
 app.use(express.json())
-app.use(cookieParser())
+app.use(cookieSession({
+    keys: [process.env.COOKIE_SECRET],
+    maxAge: 24 * 60 * 60 * 1000
+}))
 dotenv.config()
+app.use(passport.initialize())
+app.use(passport.session())
 
 // router import
 
-// let home = require('a route')
+let authRoute = require('./routes/auth.js')
+let uploadRoute = require('./routes/upload.js')
 
 // router setup
 
-// app.use('/', home)
-
-app.get('/lol', (req, res) => {
-    res.end(JSON.stringify({ lol: 'lol' }))
+app.get('/', (req, res) => {
+    res.end('<a href="/auth/google">Login</a>')
 })
+
+app.use('/auth/', authRoute)
+app.use('/upload/' , uploadRoute)
+
+
 
 // Db setup & build
 
