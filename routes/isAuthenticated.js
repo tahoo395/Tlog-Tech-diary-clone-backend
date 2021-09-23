@@ -3,6 +3,6 @@ module.exports = (req, res , next) => {
         next()
     }
     else {
-        res.redirect('/login/google')
+        res.status(401)
     }
 }

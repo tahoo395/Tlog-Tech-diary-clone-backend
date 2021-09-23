@@ -5,6 +5,7 @@ let schema = mongoose.Schema({
         type: String,
         required: true,
     },
+    name : String,
     username: String,
     profilePic : String,
 })

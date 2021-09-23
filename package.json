@@ -5,6 +5,7 @@
   "author": "tahoo395",
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.15.4",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.26.3",
     "cookie-session": "^1.4.0",
@@ -12,6 +13,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
+    "highlight.js": "^11.2.0",
     "imagemin": "7",
     "imagemin-giflossy": "^5.1.10",
     "imagemin-mozjpeg": "^9.0.0",
@@ -21,7 +23,7 @@
     "passport": "^0.4.1",
     "passport-github": "^1.1.0",
     "passport-google-oauth20": "^2.0.0",
-    "uuid": "^8.3.2"
+    "uid": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

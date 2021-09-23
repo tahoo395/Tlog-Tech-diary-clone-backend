@@ -31,15 +31,13 @@ app.use(passport.session())
 
 let authRoute = require('./routes/auth.js')
 let uploadRoute = require('./routes/upload.js')
+let blogs = require('./routes/blogs.js')
 
 // router setup
 
-app.get('/', (req, res) => {
-    res.end('<a href="/auth/google">Login</a>')
-})
-
 app.use('/auth/', authRoute)
 app.use('/upload/' , uploadRoute)
+app.use('/blogs/' , blogs)
 
 
 

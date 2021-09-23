@@ -23,7 +23,8 @@ passport.use(new googleStrategy({
         if (!currentUser) {
             let newUser = await new User({
                 id: profile.id,
-                username: profile.displayName,
+                name: profile.displayName,
+                username : profile.displayName.replace(' ' , '-').toLowerCase(),
                 profilePic : profile._json.picture
             }).save()
             done(null , newUser)

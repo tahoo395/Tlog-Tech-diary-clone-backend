@@ -19,12 +19,12 @@ passport.use(new githubStrategy({
     callbackURL: "/auth/github/callback"
 },
     async (accessToken, refreshToken, profile, done) => {
-        // console.log(profile.id , profile.displayName , profile.photos[0].value)
         let currentUser = await User.findOne({ id: profile.id })
         if (!currentUser) {
             let newUser = await new User({
                 id: profile.id,
-                username: profile.displayName,
+                name: profile.displayName,
+                username : profile.username,
                 profilePic : profile.photos[0].value
             }).save()
             done(null , newUser)
