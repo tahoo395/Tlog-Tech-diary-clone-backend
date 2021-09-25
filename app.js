@@ -32,12 +32,14 @@ app.use(passport.session())
 let authRoute = require('./routes/auth.js')
 let uploadRoute = require('./routes/upload.js')
 let blogs = require('./routes/blogs.js')
+let search = require('./routes/search.js')
 
 // router setup
 
 app.use('/auth/', authRoute)
 app.use('/upload/' , uploadRoute)
 app.use('/blogs/' , blogs)
+app.use('/search/' , search)
 
 
 
