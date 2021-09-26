@@ -16,7 +16,7 @@ passport.deserializeUser(async (id, done) => {
 passport.use(new githubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "/auth/github/callback"
+    callbackURL: "https://za011b128-z699745d2-gtw.qovery.io/auth/github/callback"
 },
     async (accessToken, refreshToken, profile, done) => {
         let currentUser = await User.findOne({ id: profile.id })
