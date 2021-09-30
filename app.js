@@ -44,8 +44,8 @@ app.use('/search/' , search)
 
 
 // Db setup & build
-
-let dbUri = process.env.QOVERY_MONGODB_Z53D5E0CF_DATABASE_URL
+let dbName = 'Tlog'
+let dbUri = `mongodb+srv://tahmid:${process.env.MONGO}@cluster0.8kt6d.mongodb.net/${dbName}`
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then(() => {
     app.listen(8000)
 })
