@@ -16,7 +16,7 @@ passport.deserializeUser(async (id, done) => {
 passport.use(new googleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "/auth/google/callback",
+    callbackURL: "https://za011b128-z699745d2-gtw.qovery.io/auth/google/callback",
 },
     async (accessToken, refreshToken, profile, done) => {
         let currentUser = await User.findOne({ id: profile.id })
