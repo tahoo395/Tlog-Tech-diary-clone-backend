@@ -15,7 +15,7 @@ let app = express();
 // middleware setup
 
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "origin-list");
+    res.header("Access-Control-Allow-Origin", "origin");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
