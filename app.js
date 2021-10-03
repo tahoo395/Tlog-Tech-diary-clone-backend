@@ -16,6 +16,7 @@ let app = express();
 // middleware setup
 
 app.use(cors({
+    origin: 'http://localhost:3001/',
     credentials: true,
 }))
 app.use(express.json())
