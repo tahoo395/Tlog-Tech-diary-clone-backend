@@ -2,6 +2,7 @@
 
 let express = require('express');
 let mongoose = require('mongoose');
+let cors = require('cors');
 let dotenv = require('dotenv');
 let cookieSession = require('cookie-session');
 let passport = require('passport')
@@ -14,11 +15,9 @@ let app = express();
 
 // middleware setup
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    next();
-  });
-
+app.use(cors({
+    credentials: true,
+}))
 app.use(express.json())
 app.use(cookieSession({
     keys: [process.env.COOKIE_SECRET],
