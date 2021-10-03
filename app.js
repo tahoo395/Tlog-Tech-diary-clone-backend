@@ -16,8 +16,11 @@ let app = express();
 // middleware setup
 
 app.use(cors({
-    origin: 'http://localhost:3001/',
     credentials: true,
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204
 }))
 app.use(express.json())
 app.use(cookieSession({
@@ -38,9 +41,9 @@ let search = require('./routes/search.js')
 // router setup
 
 app.use('/auth/', authRoute)
-app.use('/upload/' , uploadRoute)
-app.use('/blogs/' , blogs)
-app.use('/search/' , search)
+app.use('/upload/', uploadRoute)
+app.use('/blogs/', blogs)
+app.use('/search/', search)
 
 
 
