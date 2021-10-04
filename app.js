@@ -17,7 +17,7 @@ let app = express();
 
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:3000" , "https://tlog-techdiary-clone.netlify.app/"],
+    origin: ["http://localhost:3000" , "https://tlog-techdiary-clone.netlify.app"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
     optionsSuccessStatus: 204
