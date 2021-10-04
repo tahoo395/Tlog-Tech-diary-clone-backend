@@ -17,7 +17,7 @@ let app = express();
 
 app.use(cors({
     credentials: true,
-    origin: "https://za011b128-z699745d2-gtw.qovery.io",
+    origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
     optionsSuccessStatus: 204
