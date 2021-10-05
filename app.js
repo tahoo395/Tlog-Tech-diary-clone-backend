@@ -19,7 +19,7 @@ app.use(cors({
     credentials: true,
     origin: ["http://localhost:3000" , "https://tlog-techdiary-clone.netlify.app"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
+    preflightContinue: true,
     optionsSuccessStatus: 204
 }))
 app.use(express.json())
