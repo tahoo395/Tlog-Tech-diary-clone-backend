@@ -23,7 +23,7 @@ app.use(express.json())
 app.use(cookieSession({
     keys: [process.env.COOKIE_SECRET],
     maxAge: 24 * 60 * 60 * 1000,
-    domain: "https://tlog-techdiary-clone.netlify.app"
+    domain: "http://localhost:3000/"
 }))
 dotenv.config()
 app.use(passport.initialize())
