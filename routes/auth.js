@@ -3,12 +3,13 @@ let Router = require('express').Router()
 let passport = require('passport')
 
 Router.get('/me', (req, res) => {
-  if (req.user) {
-    res.json(req.user)
-  }
-  else {
-    res.sendStatus(401)
-  }
+  // if (req.user) {
+  //   res.json(req.user)
+  // }
+  // else {
+  //   res.sendStatus(401)
+  // }
+  res.json(req.user)
 })
 
 Router.get('/logout', (req, res) => {
