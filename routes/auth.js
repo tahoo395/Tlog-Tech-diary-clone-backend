@@ -18,14 +18,9 @@ Router.get('/logout', (req, res) => {
 
 Router.get('/github', passport.authenticate('github'));
 
-Router.get('/github/callback', passport.authenticate('github'), (req, res) => {
-  res.redirect(process.env.FRONTEND)
-});
-
+Router.get('/github/callback', passport.authenticate('github' , {successRedirect : process.env.FRONTEND}))
 
 Router.get('/google', passport.authenticate('google',  {scope: 'https://www.googleapis.com/auth/plus.login'} ));
 
-Router.get('/google/callback', passport.authenticate('google'), (req, res) => {
-  res.redirect(process.env.FRONTEND)
-});
+Router.get('/google/callback', passport.authenticate('google'), {successRedirect : process.env.FRONTEND})
 module.exports = Router
