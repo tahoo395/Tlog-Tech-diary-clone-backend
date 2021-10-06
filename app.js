@@ -17,7 +17,7 @@ let app = express();
 
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:3000" , "https://tlog-techdiary-clone.netlify.app" , "http://localhost:8000" , "https://za011b128-z699745d2-gtw.qovery.io"],
+    origin: ["http://localhost:3000" , "https://tlog-techdiary-clone.netlify.app" , "https://za011b128-z699745d2-gtw.qovery.io"],
 }))
 app.use(express.json())
 app.use(cookieSession({
