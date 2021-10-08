@@ -23,6 +23,8 @@ app.use(express.json())
 app.use(cookieSession({
     keys: [process.env.COOKIE_SECRET],
     maxAge: 24 * 60 * 60 * 1000,
+    resave: true,
+    saveUninitialized: true
 }))
 dotenv.config()
 app.use(passport.initialize())
